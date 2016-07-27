@@ -1,0 +1,386 @@
+@import '../../bower_components/bootstrap/less/bootstrap';
+@import '../../bower_components/toastr/toastr';
+@import (less) '../../bower_components/magnific-popup/dist/magnific-popup.css';
+
+
+/************************** Variables **************************/
+@body-bg: #dd5754;
+
+@text-color: #ffffff;
+
+@link-color: #e4a848;
+@link-hover-color: #ffca71;
+
+@navbar-default-bg: #493442;
+@navbar-default-link-color: #ffffff;
+@navbar-default-link-hover-bg: #dd5754;
+
+@footer-default-bg: #31252d;
+
+
+/************************** Common css **************************/
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 220px;
+  background-color: @body-bg;
+  color: @text-color;
+}
+
+a:link, a:visited   { text-decoration: none; color: @link-color; -webkit-transition: 0.2s; transition: 0.2s; }
+a:hover, a:focus    { text-decoration: none; color: @link-hover-color; }
+a:active            { text-decoration: none; }
+
+.reset-margin { margin: 0; border-color: @link-color; }
+
+
+/************************** Navbar **************************/
+.navbar-default {
+  background-color: @navbar-default-bg;
+
+  #navbarForm {
+    .onlineUsers {
+      color: @link-color;
+      margin-top: 8px;
+      float: left;
+
+      .badge-danger {
+        color: white;
+        background-color: @body-bg;
+      }
+    }
+
+    form {
+      input { height: 20px; padding-top: 0; padding-bottom: 0; }
+      button.btn {
+        height: 20px;
+        padding: 6px 7px;
+
+        .glyphicon {
+          top: -5px;
+        }
+      }
+    }
+
+  }
+
+  #navbar {
+    @media screen and (min-width: 767px) {
+      height: 49px !important;
+    }
+    text-align: center;
+  }
+
+  ul.navbar-nav {
+    display: inline-block;
+    float: none;
+    li {
+      a {
+        color: @navbar-default-link-color;
+        &:hover, &:focus  { background-color: @footer-default-bg; color: white }
+        &:active          { background-color: @footer-default-bg; color: white }
+      }
+    }
+  }
+
+
+
+  /******* dropdown-menu *******/
+  .dropdown-menu {
+    background-color: @navbar-default-bg;
+  }
+
+  .dropdown-submenu {
+    position: relative;
+  }
+
+  .dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: 0;
+    margin-left: 1px;
+    border-radius: 0 6px 6px 6px;
+  }
+
+  .dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+  }
+
+  /* fleche sous menu */
+  .dropdown-submenu > a:after {
+    display: block;
+    content: '';
+    float: right;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-right-width: 0;
+    border-left-color: #ffffff;
+    margin-top: 5px;
+    margin-right: -10px;
+  }
+
+}
+
+
+/************************** Page Rating + Page Single **************************/
+.pageRating, .pageSingle {
+
+  .imgPokemon {
+    width: 412px;
+    height: 412px;
+  }
+
+  /* .caption est dans page Rating uniquement */
+  .thumbnailContainer {
+    margin-top: 30px;
+
+    .thumbnail {
+      background-color: white;
+
+      .caption {
+        background-color: @navbar-default-bg;
+
+        .imgPokemon {
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+          border: 2px solid #e6835d;
+        }
+
+        .details {
+          margin: 25px 10px 10px 10px;
+          padding-top: 20px;
+          border-top: 1px solid white;
+
+          div {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  .label {
+    font-size: 1.15em;
+  }
+
+  /* Puces */
+  .list-inline {
+    margin-left: 0;
+
+    span{
+      li {
+        display: inline-block;
+        margin: 2px 6px 7px 0;
+      }
+    }
+  }
+
+  .small {
+    margin-bottom: 8px;
+  }
+
+  .br-theme-bootstrap-stars .br-widget a {
+    font-size: 3em;
+  }
+}
+
+
+/************************** Page List **************************/
+.pageList {
+  color: @navbar-default-bg;
+
+  .indexed { font-size: 3em; font-weight: bolder; color: @navbar-default-link-hover-bg; margin-top: 36px; }
+  .imgPokemonList { margin: 0 20px; }
+
+  /* Puces */
+  .label {
+    display: inline-block;
+    margin: 0 3px;
+  }
+
+  .list-group-item {
+    .item-content { margin: 21px 0; }
+    .item-infos   { margin: 30px 0; }
+  }
+
+}
+
+/** tables **/
+.table-pok-1 {
+  .table-pok-title    { min-width: 20%; display: inline-block; }
+  .table-pok-content  { display: inline-block; }
+}
+
+.table-pok-2 {
+  .table-pok-title    { display: inline-block; }
+  .table-pok-content  { display: inline-block; min-width: 45%; }
+}
+
+
+/************************** Page Single **************************/
+.pageSingle {
+  .profile-img {
+    margin-top: 36px;
+  }
+
+  .lead { margin-top: 25px; }
+
+  .pokemon-container-infos {
+    background: #493442;
+    padding: 20px;
+
+    .pokemon-main-info {
+
+    }
+
+    .pokemon-stats-info {
+      margin-top: 20px;
+      border-left: 1px solid white;
+
+      h4 {
+        margin-bottom: 20px;
+      }
+
+      strong {
+        min-width: 80px;
+        display: inline-block;
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+  .pokemon-rating-info {
+    margin-top: 20px;
+  }
+
+  .star-rating {
+    margin-top: 30px;
+
+    h2 {
+      margin-bottom: 25px;
+    }
+  }
+
+}
+
+
+/************************** Footer **************************/
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  background-color: @footer-default-bg;
+}
+
+
+
+/******** Animation Form recherche **********/
+@keyframes shake {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.shake {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-name: shake;
+}
+
+
+/******** Animation Liste **********/
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-name: fadeInUp;
+}
+
+
+
+/******** Animation Home **********/
+@keyframes flipInX {
+  0% {
+    transform: perspective(800px) rotate3d(1,0,0,90deg);
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(800px) rotate3d(1,0,0,-20deg);
+    transition-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(800px) rotate3d(1,0,0,10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(800px) rotate3d(1,0,0,-5deg);
+  }
+
+  100% {
+    transform: perspective(800px);
+  }
+}
+
+.flipInX {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  backface-visibility: visible !important;
+  animation-name: flipInX;
+}
+
+
+
+/******************************* Media Queries ******************************/
+@media screen and (max-width: 991px) {
+  /* page list */
+  .pageList {
+    .row > * {
+      width: 100%;
+    }
+
+    .table-pok-1 .table-pok-title, .table-pok-2 .table-pok-content { min-width: inherit; }
+
+    .list-group-item {
+      .item-image   {
+        text-align: center;
+
+        .pull-left { float: none !important; display: inline-block; margin-top: 0; }
+      }
+
+      .item-content, .item-infos { text-align: left; margin: 0 0 15px 0; }
+
+    }
+
+  }
+}
