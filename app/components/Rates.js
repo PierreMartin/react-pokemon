@@ -3,6 +3,7 @@ import {Link} from 'react-router';
 import StarRating from 'react-star-rating'
 import HomeStore from '../stores/RatesStore'
 import RatesActions from '../actions/RatesActions';
+import { replaceSpec } from '../formatString';
 
 class Rates extends React.Component {
     constructor(props) {
@@ -68,7 +69,7 @@ class Rates extends React.Component {
                                     <h2 className='text-center'><Link to={'/pokemon/' + pokemon._id}><strong>{pokemonName}</strong></Link></h2>
 
                                     <div className='text-center'>
-                                        <img className='imgPokemon' alt="pokemon" src={'img/' + pokemonName + '_412.jpg'}/>
+                                        <img className='imgPokemon' alt="pokemon" src={'img/' + replaceSpec(pokemonName) + '_412.jpg'}/>
                                     </div>
 
                                     <div className='row details'>

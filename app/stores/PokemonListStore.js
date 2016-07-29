@@ -1,16 +1,15 @@
 import alt from '../alt';
 import PokemonListActions from '../actions/PokemonListActions';
+import { replaceSpec } from '../formatString';
 
 class PokemonListStore {
     constructor() {
         this.bindActions(PokemonListActions);
-        this.pokemons       = [];
-        this.pokemonsName   = '';
+        this.pokemons = [];
     }
 
     onGetPokemonsSuccess(data) {
-        this.pokemons       = data;
-        this.pokemonsName   = data.name;
+        this.pokemons = data;
     }
 
     onGetPokemonsFail(jqXhr) {

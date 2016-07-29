@@ -86,8 +86,8 @@ class Navbar extends React.Component {
                                     <li className='dropdown-submenu'>
                                         <a>Types</a>
                                         <ul className='dropdown-menu'>
-                                            <li><Link to='/type/sol'>Sol</Link></li>
-                                            <li><Link to='/type/eau'>Eau</Link></li>
+                                            <li><Link to='/type/feu'>Feu</Link></li>
+                                            <li><Link to='/type/vol'>Vol</Link></li>
                                             <li><Link to='/type/insect'>Insect</Link></li>
                                             <li><Link to='/type/elektric'>Electrik</Link></li>
                                         </ul>
@@ -96,9 +96,9 @@ class Navbar extends React.Component {
                                     <li className='dropdown-submenu'>
                                         <a>Faiblesses</a>
                                         <ul className='dropdown-menu'>
-                                            <li><Link to='/faiblesse/sol'>Sol</Link></li>
-                                            <li><Link to='/faiblesse/eau'>Eau</Link></li>
-                                            <li><Link to='/faiblesse/insect'>Insect</Link></li>
+                                            <li><Link to='/faiblesse/feu'>Feu</Link></li>
+                                            <li><Link to='/faiblesse/vol'>Vol</Link></li>
+                                            <li><Link to='/faiblesse/roche'>Roche</Link></li>
                                             <li><Link to='/faiblesse/elektric'>Electrik</Link></li>
                                         </ul>
                                     </li>
@@ -108,6 +108,8 @@ class Navbar extends React.Component {
                                         <ul className='dropdown-menu'>
                                             <li><Link to='/categorie/ver'>Ver</Link></li>
                                             <li><Link to='/categorie/souris'>Souris</Link></li>
+                                            <li><Link to='/categorie/lezard'>Lezard</Link></li>
+                                            <li><Link to='/categorie/minoiseau'>Minoiseau</Link></li>
                                             <li><Link to='/categorie/papillon'>Papillon</Link></li>
                                         </ul>
                                     </li>

@@ -4,6 +4,7 @@ import {isEqual} from 'underscore';
 import StarRating from 'react-star-rating'
 import PokemonListStore from '../stores/PokemonListStore';
 import PokemonListActions from '../actions/PokemonListActions';
+import { replaceSpec } from '../formatString';
 
 class PokemonList extends React.Component {
     constructor(props) {
@@ -86,7 +87,7 @@ class PokemonList extends React.Component {
 
                             <div className='pull-left thumb-lg'>
                                 <Link to={'/pokemon/' + pokemon._id}>
-                                    <img className='imgPokemonList' alt="pokemon" src={'/img/' + pokemon.name + '_128.jpg'}/>
+                                    <img className='imgPokemonList' alt="pokemon" src={'/img/' + replaceSpec(pokemon.name) + '_128.jpg'}/>
                                 </Link>
                             </div>
                         </div>

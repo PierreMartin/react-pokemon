@@ -2,6 +2,7 @@ import React from 'react';
 import PokemonStore from '../stores/PokemonSingleStore';
 import PokemonActions from '../actions/PokemonSingleActions';
 import StarRating from 'react-star-rating'
+import { replaceSpec } from '../formatString';
 
 class PokemonSingle extends React.Component {
     constructor(props) {
@@ -101,7 +102,7 @@ class PokemonSingle extends React.Component {
 
                         <div className='profile-img text-center'>
                             <a className='magnific-popup' href={'/img/' + this.state.pokemonName + '_412.jpg'}>
-                                <img src={'/img/' + this.state.pokemonName + '_412.jpg'} className='imgPokemon' alt="pokemon" />
+                                <img src={'/img/' + replaceSpec(this.state.pokemonName) + '_412.jpg'} className='imgPokemon' alt="pokemon" />
                             </a>
                         </div>
 
