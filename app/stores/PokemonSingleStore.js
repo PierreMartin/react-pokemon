@@ -36,7 +36,7 @@ class PokemonSingleStore {
         localStorage.setItem('POK', JSON.stringify(this.pokemonIdArray));
 
         /** Toastr **/
-        toastr.success('Tu as donnée une note de ' + numberStars + ' sur 5 à ' + this.pokemonName, 'Merci !');
+        toastr.success('Tu as donné une note de ' + numberStars + ' sur 5 à ' + this.pokemonName, 'Merci !');
     }
 
     onRatingFail(errorMessage) {

@@ -38,7 +38,7 @@ class RatesStore {
         localStorage.setItem('POK', JSON.stringify(this.pokemonIdArray));
 
         /** Toastr **/
-        toastr.success('Tu as donnée une note de ' + numberStars + ' sur 5 à ' + this.pokemonName, 'Merci !');
+        toastr.success('Tu as donné une note de ' + numberStars + ' sur 5 à ' + this.pokemonName, 'Merci !');
 
         /** Animation css **/
         var thumbnailEl = document.querySelector('.pageRating .thumbnail');
