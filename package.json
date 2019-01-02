@@ -14,6 +14,10 @@
       "react"
     ]
   },
+  "engines": {
+    "node": "8.12.0",
+    "npm": "6.4.1"
+  },
   "dependencies": {
     "alt": "^0.17.8",
     "body-parser": "^1.14.1",
